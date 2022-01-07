@@ -17,6 +17,12 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run: |
+          sudo apt-get update
+          sudo apt-get -y install neofetch openssh-server curl wget unzip ubuntu-server
+          docker info
+          docker run --rm hello-world
+          docker run --rm ubuntu whoami
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
